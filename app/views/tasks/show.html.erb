@@ -1,0 +1,16 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+
+<!-- <input type="checkbox" value="completed" /> <p>Completed</p>
+ -->
+
+<% if @task.completed %>
+<p>  <i class="fa fa-check-square" aria-hidden="true"></i> </p>
+<% else %>
+<p> <i class="fa fa-square" aria-hidden="true"></i> </p>
+<%  end %>
+
+<%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: "Are you sure you want to delete?"}  %>
+
+<%= link_to "Edit task", edit_task_path(@task) %>
+<%= link_to "Back to tasks", tasks_path %>
